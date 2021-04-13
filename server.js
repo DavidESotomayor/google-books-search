@@ -1,5 +1,6 @@
 const express = require('express')
-const path = require('path')
+const mongoose = require('mongoose')
+const apiRoutes = require('./routes')
 const PORT = process.env.PORT || 3001
 const app = express()
 
@@ -12,9 +13,15 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'))
 }
 
+// API Routes
+app.use(apiRoutes)
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"))
+// Connecting to MongoDB
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
+
+mongoose.connect(MONGODB_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
 })
 
 app.listen(PORT, () => {
