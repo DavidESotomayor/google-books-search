@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/books");
+const bookController = require("../../controllers/bookController");
 
-// Matches routes with "/api/books"
 router.route("/")
-  .get(booksController.findAll)
-  .post(booksController.save);
+  .get(bookController.findAll)
+  .post(bookController.create);
 
-// Matches routes with "/api/books/:id"
-router.route("/:id")
-  .get(booksController.findOne)
-  .delete(booksController.remove);
+router
+  .route("/:id")
+  .get(bookController.findById)
+  .put(bookController.update)
+  .delete(bookController.remove);
 
 module.exports = router;

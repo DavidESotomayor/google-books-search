@@ -24,7 +24,7 @@ const Home = (props) => {
                         lastApiCall.current = requestId;
                         if (mounted) {
                             setSearch("")
-                            setBook(response.data.items)
+                            setBook(response.data)
                         }
                     })
                     .catch(err => console.log(err))
@@ -47,8 +47,10 @@ const Home = (props) => {
         setSearchBooks(+new Date())
     }
     const saveGoogleBook = (book) => {
+        console.log(book)
         API.saveBook({
             id: book.id,
+            googleId: book.id,
             title: book.title,
             authors: book.authors,
             description: book.description,
