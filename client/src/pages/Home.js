@@ -34,7 +34,7 @@ const Home = (props) => {
         return () => {
             mounted = false
         }
-    }, [searchBooks])
+    }, [searchBooks, search])
 
     const handleInputChange = (event) => {
         event.preventDefault()
@@ -66,9 +66,9 @@ const Home = (props) => {
             <Nav />
             <div className="col-md-12">
             <div className="jumbotron">
-            <h1 className="display-4 text-center myText">Google Books Search</h1>
+            <h1 className="display-4 text-center homeTextLg">Google Books Search</h1>
             <br></br>
-            <h2 className="text-center myText">Search for and save books of interest. Built with React.</h2>
+            <h2 className="text-center homeTextSm">A Search and Save React App</h2>
             </div>
             <form>
                 <h5>Search for books</h5>

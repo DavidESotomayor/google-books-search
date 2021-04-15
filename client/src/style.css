@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url('./utils/images/library-photo.jpg');
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+}
+
+.homeTextLg, .homeTextSm {
+    font-weight: bold;
+}
+
+.homeTextLg {
+    color: rgb(255, 255, 255);
+    margin-top: 125px;
+}
+
+.homeTextSm {
+    color: white;
+}
