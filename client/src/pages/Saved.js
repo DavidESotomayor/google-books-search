@@ -30,7 +30,7 @@ const Saved = (props) => {
         return () => {
             mounted = false
         }
-    }, [setGetBooks])
+    }, [getBooks])
     
     const deleteGoogleBook = currentBook => {
         API.deleteBook(currentBook.id)
