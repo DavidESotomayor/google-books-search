@@ -34,7 +34,7 @@ const Home = (props) => {
         return () => {
             mounted = false
         }
-    }, [searchBooks, search])
+    }, [searchBooks])
 
     const handleInputChange = (event) => {
         event.preventDefault()
